@@ -58,16 +58,19 @@
         </router-link>
       </div>
     </div>
+    <map></map>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import Icon from '@/components/Icon'
+import Map from '@/components/Map'
 
 export default {
   components: {
-    Icon
+    Icon,
+    Map
   },
   created () {
     this.setusers()

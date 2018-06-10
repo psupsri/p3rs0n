@@ -24,6 +24,10 @@ export default {
         .catch((err) => {
           console.log(err)
         })
+    },
+    toLower (value) {
+      if (!value) return
+      return value.toLowerCase()
     }
   }
 }

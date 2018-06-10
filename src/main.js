@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import firebase from 'firebase'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 import App from './App'
 import store from './store'
@@ -22,6 +23,13 @@ var config = {
 }
 
 firebase.initializeApp(config)
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCds68MTJuCxVnWQjHKPCTpZfzbZqQnFM8',
+    libraries: 'places'
+  }
+})
 
 Vue.filter('toUpper', (value) => {
   if (!value) return ''

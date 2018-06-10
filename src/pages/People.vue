@@ -52,7 +52,7 @@
           <td>{{ person.blood }}</td>
           <td>{{ person.religion }}</td>
           <td>{{ person.status }}</td>
-          <td v-if="admin">
+          <td v-if="admin" style="z-index: 1000;">
             <div class="field is-grouped">
               <div class="control">
                 <router-link :to="`/people/id/edit/${person._id}`" class="button is-info is-small" title="กดเพื่อแก้ไข">
@@ -66,6 +66,22 @@
               </div>
             </div>
           </td>
+          <div class="modal is-active" v-if="i === modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">ลบข้อมูล {{ fullname(i) }}</p>
+                <button class="delete" aria-label="close" @click="toggleModal"></button>
+              </header>
+              <section class="modal-card-body">
+                ข้อมูลที่ถูกลบไปจะไม่สามารถกู้คืนได้
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success" @click="delPeople(person._id)">ยืนยัน</button>
+                <button class="button is-danger" @click="toggleModal">ยกเลิก</button>
+              </footer>
+            </div>
+          </div>
         </router-link>
       </tbody>
     </table>
