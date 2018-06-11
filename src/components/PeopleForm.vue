@@ -209,10 +209,10 @@
         </div>
         <div class="field is-grouped">
           <div class="control">
-            <input class="button is-link" type="submit" value="ยืนยัน">
+            <input class="button is-link" type="submit" value="save">
           </div>
           <div class="control">
-            <a class="button is-text" @click="back">ยกเลิก</a>
+            <a class="button is-text" @click="back">cancel</a>
           </div>
         </div>
       </div>

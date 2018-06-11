@@ -10,6 +10,8 @@ import PeopleCreate from '@/pages/PeopleCreate'
 import PeopleById from '@/pages/PeopleById'
 import PeopleEdit from '@/pages/PeopleEdit'
 import PeopleSearch from '@/pages/PeopleSearch'
+import Organization from '@/pages/Organization'
+import OrganizationCreate from '@/pages/OrganizationCreate'
 
 Vue.use(Router)
 
@@ -30,6 +32,8 @@ export default new Router({
         { path: '/people/new', name: 'PeopleCreate', component: PeopleCreate },
         { path: '/people/id/:id', name: 'PeopleById', component: PeopleById },
         { path: '/people/id/edit/:id', name: 'PeopleEdit', component: PeopleEdit },
+        { path: '/organization', name: 'Organization', component: Organization },
+        { path: '/organization/new', name: 'OrganizationCreate', component: OrganizationCreate },
         { path: '/searching', name: 'PeopleSearch', component: PeopleSearch }
       ]
     },

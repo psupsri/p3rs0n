@@ -26,6 +26,10 @@
             <icon :class="`has-text-info`" :icon="`fa-user fa-lg`"></icon>&nbsp;
             <span>ข้อมูลผู้ใช้ระบบ</span>
           </router-link>
+          <router-link to="/organization" class="navbar-item" exact v-if="admin">
+            <icon :class="`has-text-info`" :icon="`fa-user fa-lg`"></icon>&nbsp;
+            <span>ข้อมูลองค์กร</span>
+          </router-link>
           <router-link to="/searching" class="navbar-item" exact v-if="admin">
             <icon :class="`has-text-success`" :icon="`fa-search fa-lg`"></icon>&nbsp;
             <span>ระบบค้นหา</span>
