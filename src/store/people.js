@@ -28,7 +28,7 @@ const getters = {
       let i = _.filter(sp, {'_id': id})
       let p = sp.filter((s) => {
         s.similar.push('สังกัดองค์กรเดียวกัน')
-        return s.organizationsPrimary.organization === i[0].organizationsPrimary.organization && s._id !== i[0]._id
+        return s.organizationsPrimary.organization === i[0].organizationsPrimary.organization && s._id !== i[0]._id && i[0].organizationsPrimary.organization !== ''
       })
       // console.log(p)
       return p

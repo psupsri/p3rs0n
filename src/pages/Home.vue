@@ -30,32 +30,6 @@
         </router-link>
       </div>
       <div class="column is-3">
-        <router-link to="/user" class="has-text-primary">
-          <div class="card" v-if="getUsers">
-            <header class="card-header has-background-primary">
-              <p class="card-header-title has-text-white">
-                ข้อมูลผู้ใช้ระบบ
-              </p>
-              <a href="#" class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                  <i class="fa fa-caret-right" aria-hidden="true"></i>
-                </span>
-              </a>
-            </header>
-            <div class="card-content">
-              <div class="content">
-                <div class="columns">
-                  <div class="column">
-                    <icon :icon="`fa fa-user`"></icon>
-                  </div>
-                  <div class="column">
-                    {{ getUsers.length }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
       </div>
     </div>
     <map></map>
@@ -74,16 +48,19 @@ export default {
   },
   created () {
     this.setusers()
+    this.setorgs()
   },
   computed: {
     ...mapGetters({
       getPeople: 'getPeople',
-      getUsers: 'getUsers'
+      getUsers: 'getUsers',
+      getOrgs: 'getOrgs'
     })
   },
   methods: {
     ...mapActions({
-      setusers: 'setusers'
+      setusers: 'setusers',
+      setorgs: 'setorgs'
     })
   }
 }

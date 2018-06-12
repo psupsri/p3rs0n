@@ -2,8 +2,8 @@ import Auth from './auth'
 import User from './user'
 import Me from './me'
 import People from './people'
-import Upload from './upload'
 import Organization from './organization'
+import Upload from './upload'
 
 export {
   Auth,

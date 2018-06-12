@@ -3,6 +3,7 @@ export default {
     org: {
       nameTH: '',
       nameEN: '',
+      coordinator: '',
       tel: '',
       email: '',
       address: {
@@ -12,7 +13,9 @@ export default {
         province: '',
         zipcode: ''
       },
-      job: ''
+      area: '',
+      objective: '',
+      investment: ''
     }
   })
 }

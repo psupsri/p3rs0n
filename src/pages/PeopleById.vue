@@ -11,7 +11,7 @@
           <icon :icon="`fa-edit`"></icon>
         </router-link>
       </div>
-      <div class="column is-6">
+      <div class="column is-4">
         <figure class="image">
           <img :src="peopleData.photo" class="image-cover" v-if="peopleData.photo">
           <img src="@/assets/files/photos/nophoto.png" class="image-cover" v-else>
@@ -74,7 +74,6 @@
       </div>
       </div>
     </div>
-    <hr>
     <!-- <pagination :listData="['1', '2', '3']" :size="pageSize" @changePage="changePage"></pagination> -->
   </div>
 </template>

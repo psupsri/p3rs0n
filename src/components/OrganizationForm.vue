@@ -13,6 +13,12 @@
       </div>
     </div>
     <div class="field">
+      <label class="label">ผู้ประสานงาน</label>
+      <div class="control">
+        <input class="input" type="text" v-model="org.coordinator">
+      </div>
+    </div>
+    <div class="field">
       <label class="label">เบอร์โทรสำนักงาน</label>
       <div class="control">
         <input class="input" type="text" v-model="org.tel">
@@ -27,27 +33,39 @@
     <div class="field">
       <label class="label">ที่ตั้งสำนักงาน</label>
       <div class="control">
-        <input type="text" class="input" placeholder="ที่อยู่">
+        <input type="text" class="input" placeholder="ที่อยู่" v-model="org.address.address">
       </div>
     </div>
     <div class="field is-grouped">
       <div class="control">
-        <input type="text" class="input" placeholder="ตำบล">
+        <input type="text" class="input" placeholder="ตำบล" v-model="org.address.subDistrict">
       </div>
       <div class="control">
-        <input type="text" class="input" placeholder="อำเภอ">
+        <input type="text" class="input" placeholder="อำเภอ" v-model="org.address.district">
       </div>
       <div class="control">
-        <input type="text" class="input" placeholder="จังหวัด">
+        <input type="text" class="input" placeholder="จังหวัด" v-model="org.address.province">
       </div>
       <div class="control">
-        <input type="text" class="input" placeholder="รหัสไปรษณีย์">
+        <input type="text" class="input" placeholder="รหัสไปรษณีย์" v-model="org.address.zipcode">
       </div>
     </div>
     <div class="field">
-      <label class="label">ลักษณะของธุรกิจ</label>
+      <label class="label">พื้นที่ปฏิบัติงาน</label>
       <div class="control">
-        <input type="text" class="input" placeholder="ลักษณะของธุรกิจ" v-model="org.job">
+        <input type="text" class="input" placeholder="ลักษณะของธุรกิจ" v-model="org.area">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">วัตถุประสงค์</label>
+      <div class="control">
+        <input type="text" class="input" placeholder="ลักษณะของธุรกิจ" v-model="org.objective">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">แหล่งเงินทุน</label>
+      <div class="control">
+        <input type="text" class="input" placeholder="ลักษณะของธุรกิจ" v-model="org.investment">
       </div>
     </div>
     <div class="field is-grouped">

@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import Index from '@/pages/Index'
 import Home from '@/pages/Home'
 import SignIn from '@/pages/SignIn'
-import User from '@/pages/User'
-import UserCreate from '@/pages/UserCreate'
+// import User from '@/pages/User'
+// import UserCreate from '@/pages/UserCreate'
 import People from '@/pages/People'
 import PeopleCreate from '@/pages/PeopleCreate'
 import PeopleById from '@/pages/PeopleById'
@@ -26,8 +26,8 @@ export default new Router({
       meta: { requiresAuth: true },
       children: [
         { path: '/home', name: 'Home', component: Home },
-        { path: '/user', name: 'User', component: User },
-        { path: '/user/new', name: 'UserCreate', component: UserCreate },
+        // { path: '/user', name: 'User', component: User },
+        // { path: '/user/new', name: 'UserCreate', component: UserCreate },
         { path: '/people', name: 'People', component: People },
         { path: '/people/new', name: 'PeopleCreate', component: PeopleCreate },
         { path: '/people/id/:id', name: 'PeopleById', component: PeopleById },
@@ -37,6 +37,7 @@ export default new Router({
         { path: '/searching', name: 'PeopleSearch', component: PeopleSearch }
       ]
     },
-    { path: '/signin', name: 'SignIn', component: SignIn }
+    { path: '/signin', name: 'SignIn', component: SignIn },
+    { path: '*', redirect: '/home' }
   ]
 })

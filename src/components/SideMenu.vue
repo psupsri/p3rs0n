@@ -9,17 +9,5 @@
     <ul class="menu-list">
       <li><router-link to="/people" exact>ข้อมูลบุคคล</router-link></li>
     </ul>
-    <p class="menu-label">
-      ผู้ดูแลระบบ
-    </p>
-    <ul class="menu-list">
-      <li>
-        <a>ข้อมูลผู้ใช้ระบบ</a>
-        <ul>
-          <li><router-link to="/user" exact>จัดการข้อมูล</router-link></li>
-          <!-- <li><router-link to="/user/report">ดูรายงาน</router-link></li> -->
-        </ul>
-      </li>
-    </ul>
   </aside>
 </template>
