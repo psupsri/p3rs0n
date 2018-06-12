@@ -30,7 +30,6 @@
       <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
           <tr>
-            <td>ลำดับ</td>
             <td>ชื่อจริง</td>
             <td>นามสกุล</td>
             <td>อีเมล์</td>
@@ -41,17 +40,16 @@
             <td>สถานภาพ</td>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tbody v-if="result">
+          <tr v-for="(person, index) in result" :key="index">
+            <td>{{ person.firstname }}</td>
+            <td>{{ person.lastname }}</td>
+            <td>{{ person.email }}</td>
+            <td>{{ person.tel }}</td>
+            <td>{{ person.gender }}</td>
+            <td>{{ person.blood }}</td>
+            <td>{{ person.religion }}</td>
+            <td>{{ person.status }}</td>
           </tr>
         </tbody>
       </table>
@@ -66,17 +64,23 @@ import firebase from 'firebase'
 export default {
   data: () => ({
     words: '',
-    type: ''
+    type: '',
+    result: []
   }),
   methods: {
     search () {
+      if (this.type === '' || this.words === '') return
+      let word = this.words.trim()
       firebase.database()
         .ref(`people`)
         .orderByChild(this.type)
-        .startAt(this.words)
+        .equalTo(word)
         .on('value', (snapshot) => {
-          console.log(snapshot.val())
+          this.result = snapshot.val()
         })
+      if (!this.result) {
+        this.result = {firstname: 'No Result'}
+      }
     }
   }
 }
