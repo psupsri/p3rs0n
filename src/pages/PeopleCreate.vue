@@ -25,6 +25,9 @@ export default {
           console.log(err)
         })
     },
+    back () {
+      this.$router.push(`/people`)
+    },
     toLower (value) {
       if (!value) return
       return value.toLowerCase()

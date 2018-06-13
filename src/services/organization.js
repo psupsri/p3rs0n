@@ -16,6 +16,14 @@ const get = (cb) => {
     })
 }
 
+const getById = (id, callback) => {
+  firebase.database()
+    .ref(`organization/${id}`)
+    .on('value', (snapshot) => {
+      callback(snapshot.val())
+    })
+}
+
 const set = (data) => {
   return firebase.database()
     .ref(`organization`)
@@ -24,5 +32,6 @@ const set = (data) => {
 
 export default {
   set,
-  get
+  get,
+  getById
 }

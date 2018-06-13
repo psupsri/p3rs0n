@@ -1,7 +1,7 @@
 <template>
 <div>
   <p class="title">แก้ไขข้อมูลบุคคล</p>
-  <people-form @save="save" :data="people"></people-form>
+  <people-form @save="save" :data="people" @back="back"></people-form>
 </div>
 </template>
 
@@ -37,11 +37,14 @@ export default {
       value._updatedAt = Date.now()
       People.update(this.id, value)
         .then(() => {
-          this.$router.push('/people')
+          this.$router.push(`/people/id/${this.id}`)
         })
         .catch((err) => {
           console.log(err)
         })
+    },
+    back () {
+      this.$router.push(`/people/id/${this.id}`)
     }
   }
 }

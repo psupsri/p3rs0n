@@ -157,7 +157,12 @@
             <input class="input" type="text" placeholder="อาชีพ" v-model="people.organizationsPrimary.job">
           </div>
           <div class="control">
-            <input class="input" type="text" placeholder="องค์กร" v-model="people.organizationsPrimary.organization">
+            <div class="select">
+              <select v-model="people.organizationsPrimary.organization">
+                <option value="">เลือกองค์กร</option>
+                <option :value="org._id" v-for="(org, op) in getOrgs" :key="`oc-${op}`">{{ org.nameTH }}</option>
+              </select>
+            </div>
           </div>
           <div class="control">
             <input class="input" type="text" placeholder="ตำแหน่ง" v-model="people.organizationsPrimary.position">
@@ -172,7 +177,12 @@
             <input class="input" type="text" placeholder="อาชีพ" v-model="people.organizations[i].job">
           </div>
           <div class="control">
-            <input class="input" type="text" placeholder="องค์กร" v-model="people.organizations[i].organization">
+            <div class="select">
+              <select v-model="people.organizations[i].organization">
+                <option value="">เลือกองค์กร</option>
+                <option :value="org._id" v-for="(org, oc) in getOrgs" :key="`oc-${oc}`">{{ org.nameTH }}</option>
+              </select>
+            </div>
           </div>
           <div class="control">
             <input class="input" type="text" placeholder="ตำแหน่ง" v-model="people.organizations[i].position">
@@ -244,6 +254,11 @@ export default {
   created () {
     this.reload()
   },
+  computed: {
+    getOrgs () {
+      return this.$store.getters.getOrgs
+    }
+  },
   watch: {
     data () {
       this.reload()
@@ -288,7 +303,7 @@ export default {
       this.modal = value
     },
     back () {
-      this.$router.push('/people')
+      this.$emit('back')
     }
   }
 }

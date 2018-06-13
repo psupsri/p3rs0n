@@ -15,30 +15,22 @@
       <div class="navbar-menu" :class="{ 'is-active': burger }">
         <div class="navbar-start">
           <router-link to="/home" class="navbar-item" exact>
-            <icon :class="`has-text-success`" :icon="`fa-home fa-lg`"></icon>&nbsp;
-            <span>หน้าแรก</span>
+            <span>HOME</span>
           </router-link>
           <router-link to="/people" class="navbar-item" exact>
-            <icon :class="`has-text-link`" :icon="`fa-user fa-lg`"></icon>&nbsp;
-            <span>ข้อมูลบุคคล</span>
+            <span>PEOPLE</span>
           </router-link>
           <!-- <router-link to="/user" class="navbar-item" exact v-if="admin">
             <icon :class="`has-text-info`" :icon="`fa-user fa-lg`"></icon>&nbsp;
             <span>ข้อมูลผู้ใช้ระบบ</span>
           </router-link> -->
           <router-link to="/organization" class="navbar-item" exact v-if="admin">
-            <icon :class="`has-text-info`" :icon="`fa-user fa-lg`"></icon>&nbsp;
-            <span>ข้อมูลองค์กร</span>
-          </router-link>
-          <router-link to="/searching" class="navbar-item" exact v-if="admin">
-            <icon :class="`has-text-success`" :icon="`fa-search fa-lg`"></icon>&nbsp;
-            <span>ระบบค้นหา</span>
+            <span>ORGANIZATION</span>
           </router-link>
         </div>
         <div class="navbar-end">
           <a class="button navbar-item is-danger" @click="signOut">
-            <icon :icon="`fa-sign-out fa-lg`"></icon>
-            <span>Sign Out</span>
+            <span>SIGN OUT</span>
           </a>
         </div>
       </div>

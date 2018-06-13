@@ -1,4 +1,4 @@
-// import _ from 'lodash'
+import _ from 'lodash'
 import { Organization } from '@/services'
 
 const state = {
@@ -18,8 +18,8 @@ const actions = {
 }
 
 const getters = {
-  getOrgs: state => state.organization
-  // getPeopleById: state => id => _.filter(state.organization, { '_id': id })
+  getOrgs: state => state.organization,
+  getOrgById: state => id => _.filter(state.organization, { '_id': id })
 }
 
 export default {

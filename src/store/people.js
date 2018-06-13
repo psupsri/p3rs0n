@@ -33,6 +33,11 @@ const getters = {
       // console.log(p)
       return p
     }
+  },
+  getPeopleByOrg (state) {
+    return (id) => {
+      return state.people.filter((o) => o.organizationsPrimary.organization === id)
+    }
   }
 }
 

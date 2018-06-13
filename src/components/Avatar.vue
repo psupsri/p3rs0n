@@ -1,7 +1,7 @@
 <template>
-  <figure class="image">
-    <img :src="photo" class="avatar" v-if="photo">
-    <img src="@/assets/files/photos/nophoto.png" class="avatar" v-else>
+  <figure class="image" :style="{ 'background-image': 'url(' + photo + ')' }">
+    <!-- <img :src="photo" class="avatar" v-if="photo">
+    <img src="@/assets/files/photos/nophoto.png" class="avatar" v-else> -->
   </figure>
 </template>
 
@@ -17,6 +17,9 @@ export default {
   min-width: 100% !important;
   height: 180px !important;
   max-height: 180px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .avatar {
   width: 100%;

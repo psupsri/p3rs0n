@@ -38,3 +38,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.section {
+  height: 100vh;
+  background: #fefefe;
+}
+</style>
