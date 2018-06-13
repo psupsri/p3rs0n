@@ -1,5 +1,5 @@
 <template>
-  <aside class="menu box">
+  <aside class="menu">
     <p class="menu-label">
       ทั่วไป
     </p>

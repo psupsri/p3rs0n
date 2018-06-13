@@ -1,5 +1,5 @@
 <template>
-<div class="box">
+<div>
   <div class="columns">
     <div class="column">
       <div class="field">
@@ -87,7 +87,7 @@
     </table>
   </div>
   <div class="columns is-multiline" v-if="show === 'photo'">
-    <div class="column is-half-tablet is-one-quarter-desktop is-one-fifth-widescreen has-text-centered person-box" v-for="(person, i) in getPeople" :key="i">
+    <div class="column is-2 has-text-centered person-box" v-for="(person, i) in getPeople" :key="i">
       <div class="person-with-avatar">
         <div class="top-right option-button" v-if="admin">
           <router-link :to="`/people/id/edit/${person._id}`" class="button is-info is-small" title="กดเพื่อแก้ไข">

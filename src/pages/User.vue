@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <div class="field">
       <div class="control">
         <router-link to="new" append class="button is-primary">

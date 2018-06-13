@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <user-form @save="save"></user-form>
   </div>
 </template>

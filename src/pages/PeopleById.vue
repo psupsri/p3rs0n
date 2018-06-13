@@ -1,5 +1,5 @@
 <template>
-  <div class="box" v-if="peopleData">
+  <div v-if="peopleData">
     <div class="columns is-multiline">
       <div class="column is-9">
         <span class="title">
@@ -17,7 +17,7 @@
           <img src="@/assets/files/photos/nophoto.png" class="image-cover" v-else>
         </figure>
       </div>
-      <div class="column box">
+      <div class="column">
         <p class="title is-5">ข้อมูลทั่วไป</p>
         <strong><icon :icon="` fa fa-venus-mars`" :color="`has-text-dark`"></icon>เพศ: </strong>
         <span>{{ peopleData.gender }}</span><br>

@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <p class="title is-5">ระบบค้นหาข้อมูล</p>
     <div class="field has-addons">
       <div class="control is-expanded">

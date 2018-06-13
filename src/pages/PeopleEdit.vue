@@ -1,5 +1,5 @@
 <template>
-<div class="box">
+<div>
   <p class="title">แก้ไขข้อมูลบุคคล</p>
   <people-form @save="save" :data="people"></people-form>
 </div>

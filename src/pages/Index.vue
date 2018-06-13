@@ -3,10 +3,10 @@
     <navbar></navbar>
     <section class="section">
       <div class="columns">
-        <div class="column is-2 is-hidden-touch">
+        <!-- <div class="column is-2 is-hidden-touch">
           <side-menu></side-menu>
-        </div>
-        <div class="column">
+        </div> -->
+        <div class="column is-offset-1 is-10">
           <router-view></router-view>
         </div>
       </div>
@@ -38,9 +38,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.section {
-  background: #fafafa;
-}
-</style>

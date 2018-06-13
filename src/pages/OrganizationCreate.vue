@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <p class="title">เพิ่มข้อมูลบุคคล</p>
     <organization-form @save="save"></organization-form>
   </div>
