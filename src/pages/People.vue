@@ -1,6 +1,9 @@
 <template>
 <div>
-  <div class="columns">
+  <div class="columns is-multiline">
+    <div class="column is-12">
+      <span class="title">PEOPLE DATA</span><br>
+    </div>
     <div class="column">
       <search-input @search="getSearchResult"></search-input>
       <div class="person-with-table" v-if="show === 'table'">
@@ -20,7 +23,7 @@
             </tr>
           </thead>
           <tbody>
-            <router-link :to="`/people/id/${person._id}`" class="has-text-grey-darker" tag="tr" v-for="(person, i) in people" :key="i">
+            <tr class="has-text-grey-darker" v-for="(person, i) in people" :key="i">
               <td>{{ i + 1 }}</td>
               <td>{{ person.firstname }}</td>
               <td>{{ person.lastname }}</td>
@@ -30,8 +33,13 @@
               <td>{{ person.blood }}</td>
               <td>{{ person.religion }}</td>
               <td>{{ person.status }}</td>
-              <td v-if="admin" style="z-index: 1000;">
+              <td v-if="admin">
                 <div class="field is-grouped">
+                  <div class="control">
+                    <router-link :to="`/people/id/${person._id}`" class="button is-success is-small" title="ดูรายละเอียด">
+                      <icon :icon="`fa-sign-in`"></icon>
+                    </router-link>
+                  </div>
                   <div class="control">
                     <router-link :to="`/people/id/edit/${person._id}`" class="button is-info is-small" title="กดเพื่อแก้ไข">
                       <icon :icon="`fa-edit`"></icon>
@@ -60,7 +68,7 @@
                   </footer>
                 </div>
               </div>
-            </router-link>
+            </tr>
           </tbody>
         </table>
       </div>
