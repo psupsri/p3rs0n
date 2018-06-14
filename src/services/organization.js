@@ -5,6 +5,7 @@ const get = (cb) => {
     .ref(`organization`)
     .on('value', (snapshots) => {
       const result = []
+      if (!snapshots.val()) return cb(result)
       const key = Object.keys(snapshots.val())
       snapshots.forEach((snapshot) => {
         result.push(snapshot.val())
@@ -16,11 +17,11 @@ const get = (cb) => {
     })
 }
 
-const getById = (id, callback) => {
+const getById = (id, cb) => {
   firebase.database()
     .ref(`organization/${id}`)
     .on('value', (snapshot) => {
-      callback(snapshot.val())
+      cb(snapshot.val())
     })
 }
 

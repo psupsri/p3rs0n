@@ -1,11 +1,12 @@
 import firebase from 'firebase'
 
-const get = (sorting, callback) => {
+const get = (sorting, cb) => {
   firebase.database()
     .ref(`people`)
     .orderByChild(sorting)
     .on('value', (snapshots) => {
       const result = []
+      if (!snapshots.val()) return cb(result)
       const key = Object.keys(snapshots.val())
       snapshots.forEach((snapshot) => {
         result.push(snapshot.val())
@@ -13,15 +14,15 @@ const get = (sorting, callback) => {
       for (let i = 0; i < key.length; i++) {
         result[i]._id = key[i]
       }
-      callback(result)
+      cb(result)
     })
 }
 
-const getById = (id, callback) => {
+const getById = (id, cb) => {
   firebase.database()
     .ref(`people/${id}`)
     .on('value', (snapshot) => {
-      callback(snapshot.val())
+      cb(snapshot.val())
     })
 }
 

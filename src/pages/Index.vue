@@ -2,15 +2,14 @@
   <div>
     <navbar></navbar>
     <section class="section">
-      <div class="columns">
-        <!-- <div class="column is-2 is-hidden-touch">
-          <side-menu></side-menu>
-        </div> -->
-        <div class="column is-offset-1 is-10">
-          <router-view></router-view>
+      <div class="columns index-content">
+        <div class="column is-offset-1 is-10 box">
+          <router-view/>
         </div>
       </div>
     </section>
+    <foot></foot>
+    <nav class="navbar is-fixed-bottom is-info"></nav>
   </div>
 </template>
 
@@ -18,11 +17,13 @@
 import { mapActions } from 'vuex'
 import Navbar from '@/components/Navbar'
 import SideMenu from '@/components/SideMenu'
+import Foot from '@/components/Foot'
 
 export default {
   components: {
     Navbar,
-    SideMenu
+    SideMenu,
+    Foot
   },
   data: () => ({
     sorting: '_createdAt'
@@ -41,7 +42,8 @@ export default {
 
 <style scoped>
 .section {
-  height: 100vh;
-  background: #fefefe;
+  margin-top: 80px;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 </style>

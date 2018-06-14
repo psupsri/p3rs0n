@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-spaced">
+  <nav class="navbar is-spaced is-info is-fixed-top">
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" style="background: grey">
@@ -15,22 +15,22 @@
       <div class="navbar-menu" :class="{ 'is-active': burger }">
         <div class="navbar-start">
           <router-link to="/home" class="navbar-item" exact>
-            <span>HOME</span>
+            <span>หน้าแรก</span>
           </router-link>
           <router-link to="/people" class="navbar-item" exact>
-            <span>PEOPLE</span>
+            <span>ข้อมูลบุคคล</span>
           </router-link>
           <!-- <router-link to="/user" class="navbar-item" exact v-if="admin">
             <icon :class="`has-text-info`" :icon="`fa-user fa-lg`"></icon>&nbsp;
             <span>ข้อมูลผู้ใช้ระบบ</span>
           </router-link> -->
           <router-link to="/organization" class="navbar-item" exact v-if="admin">
-            <span>ORGANIZATION</span>
+            <span>ข้อมูลองค์กร</span>
           </router-link>
         </div>
         <div class="navbar-end">
-          <a class="button navbar-item is-danger" @click="signOut">
-            <span>SIGN OUT</span>
+          <a class="button navbar-item has-text-info" @click="signOut">
+            <span>ออกจากระบบ</span>
           </a>
         </div>
       </div>
@@ -84,3 +84,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a.navbar-item:hover {
+  background: none !important;
+  color: #fff27b !important;
+}
+a.navbar-item.is-active {
+  background: none !important;
+  color: #fed837 !important;
+}
+</style>

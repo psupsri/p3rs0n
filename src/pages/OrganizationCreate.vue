@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="title">เพิ่มข้อมูลบุคคล</p>
+    <p class="title">เพิ่มข้อมูลองค์กร</p>
     <organization-form @save="save"></organization-form>
   </div>
 </template>

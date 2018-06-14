@@ -41,7 +41,7 @@
       <div class="column is-4">
         <p class="title is-5">อาชีพ/องค์กร</p>
         <strong><icon :icon="`fa fa-briefcase`" :color="`has-text-dark`"></icon>อาชีพ: </strong> {{ checkData(peopleData.organizationsPrimary.job) }}<br>
-        <strong><icon :icon="`fa fa-building`" :color="`has-text-dark`"></icon>องค์กร: </strong> {{ getOrgName[0].nameTH }}<br>
+        <strong><icon :icon="`fa fa-building`" :color="`has-text-dark`"></icon>องค์กร: </strong> <span v-if="getOrgName.length === 0">ไม่มีข้อมูล</span><span v-else>{{ getOrgName[0].nameTH }}</span><br>
         <strong><icon :icon="`fa fa-user`" :color="`has-text-dark`"></icon>ตำแหน่ง: </strong> {{ checkData(peopleData.organizationsPrimary.position) }}<br>
         <strong><icon :icon="`fa fa-dollar`" :color="`has-text-dark`"></icon>เงินเดือน: </strong> {{ checkData(peopleData.organizationsPrimary.salary) }}<br>
         <br>
@@ -179,5 +179,8 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+figure.image {
+  margin: 0 !important;
 }
 </style>

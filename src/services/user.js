@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-const getAllUsers = (callback) => {
+const getAllUsers = (cb) => {
   firebase.database()
     .ref(`users`)
     .once('value', (snapshots) => {
@@ -8,14 +8,14 @@ const getAllUsers = (callback) => {
       snapshots.forEach((snapshot) => {
         result.push(snapshot.val())
       })
-      callback(result)
+      cb(result)
     })
 }
-const get = (id, callback) => {
+const get = (id, cb) => {
   firebase.database()
     .ref(`users/${id}`)
     .once('value', (snapshot) => {
-      callback(snapshot.val())
+      cb(snapshot.val())
     })
 }
 

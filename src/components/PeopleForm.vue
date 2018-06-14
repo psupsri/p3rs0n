@@ -217,19 +217,19 @@
             <input class="button is-danger" type="button" value="-" @click="delItems(people.socials, i)">
           </div>
         </div>
-        <div class="field is-grouped">
-          <div class="control">
-            <input class="button is-link" type="submit" value="save">
-          </div>
-          <div class="control">
-            <a class="button is-text" @click="back">cancel</a>
-          </div>
-        </div>
       </div>
     </div>
     <upload-modal :value="modal" :image="file" :percent="progress"
       @close="closeModal" @selectedFile="selectedFile" @uploadPhoto="uploadPhoto">
     </upload-modal>
+    <div class="field is-grouped">
+      <div class="control">
+        <input class="button is-link" type="submit" value="save">
+      </div>
+      <div class="control">
+        <a class="button is-text" @click="back">cancel</a>
+      </div>
+    </div>
   </form>
 </template>
 
