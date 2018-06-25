@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="title">เพิ่มข้อมูลองค์กร</p>
-    <organization-form @save="save"></organization-form>
+    <organization-form @save="save" @back="back"></organization-form>
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
         .catch((err) => {
           console.log(err)
         })
+    },
+    back () {
+      this.$router.push('/organization')
     }
   }
 }

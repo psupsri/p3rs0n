@@ -2,10 +2,11 @@
   <nav class="navbar is-spaced is-info is-fixed-top">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" style="background: grey">
+        <div class="navbar-item">
+          <span class="title">LOGO</span>
           <!-- <img src="@/assets/logo.png" width="112" height="28"> -->
-          <img width="112" height="28">
-        </a>
+          <!-- <img width="112" height="28"> -->
+        </div>
         <a role="button" class="navbar-burger" :class="{ 'is-active': burger }" @click="toggleBurger">
           <span></span>
           <span></span>

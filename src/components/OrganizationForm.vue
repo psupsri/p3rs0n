@@ -3,73 +3,47 @@
     <div class="columns">
       <div class="column is-4">
         <div class="field">
-          <label class="label">ชื่อไทย</label>
-          <div class="control">
-            <input class="input" type="text" v-model="org.nameTH">
-          </div>
+          <input-box :type="`text`" :label="`ชื่อไทย`" v-model="org.nameTH"></input-box>
         </div>
         <div class="field">
-          <label class="label">ชื่ออังกฤษ</label>
-          <div class="control">
-            <input class="input" type="text" v-model="org.nameEN">
-          </div>
+          <input-box :type="`text`" :label="`ชื่ออังกฤษ`" v-model="org.nameEN"></input-box>
         </div>
         <div class="field">
-          <label class="label">ผู้ประสานงาน</label>
-          <div class="control">
-            <input class="input" type="text" v-model="org.coordinator">
-          </div>
+          <input-box :type="`text`" :label="`ชื่อย่อไทย`" v-model="org.nameShTH"></input-box>
         </div>
         <div class="field">
-          <label class="label">เบอร์โทรสำนักงาน</label>
-          <div class="control">
-            <input class="input" type="text" v-model="org.tel">
-          </div>
+          <input-box :type="`text`" :label="`ชื่อย่ออังกฤษ`" v-model="org.nameShEN"></input-box>
         </div>
         <div class="field">
-          <label class="label">อีเมล์สำนักงาน</label>
-          <div class="control">
-            <input class="input" type="text" v-model="org.email">
-          </div>
+          <input-box :type="`text`" :label="`เบอร์โทรสำนักงาน`" v-model="org.tel"></input-box>
         </div>
         <div class="field">
-          <label class="label">ที่ตั้งสำนักงาน</label>
-          <div class="control">
-            <input type="text" class="input" placeholder="ที่อยู่" v-model="org.address.address">
-          </div>
+          <input-box :type="`text`" :label="`อีเมล์สำนักงาน`" v-model="org.email"></input-box>
+        </div>
+        <div class="field">
+          <input-box :type="`text`" :label="`ที่ตั้งสำนักงาน`" v-model="org.address.address"></input-box>
         </div>
         <div class="field is-grouped">
-          <div class="control">
-            <input type="text" class="input" placeholder="ตำบล" v-model="org.address.subDistrict">
-          </div>
-          <div class="control">
-            <input type="text" class="input" placeholder="อำเภอ" v-model="org.address.district">
-          </div>
-          <div class="control">
-            <input type="text" class="input" placeholder="จังหวัด" v-model="org.address.province">
-          </div>
-          <div class="control">
-            <input type="text" class="input" placeholder="รหัสไปรษณีย์" v-model="org.address.zipcode">
-          </div>
+          <input-box :type="`text`" :placeholder="`ที่ตั้งสำนักงาน`" v-model="org.address.tambon"></input-box>
+          <input-box :type="`text`" :placeholder="`อำเภอ`" v-model="org.address.amphoe"></input-box>
+          <input-box :type="`text`" :placeholder="`จังหวัด`" v-model="org.address.province"></input-box>
+          <input-box :type="`text`" :placeholder="`รหัสไปรษณีย์`" v-model="org.address.postcode"></input-box>
         </div>
       </div>
       <div class="column">
         <div class="field">
-          <label class="label">พื้นที่ปฏิบัติงาน</label>
-          <div class="control">
-            <input type="text" class="input" placeholder="พื้นที่ปฏิบัติงาน" v-model="org.area">
-          </div>
+          <input-box :type="`text`" :label="`ผู้ประสานงาน`" v-model="org.coordinator"></input-box>
         </div>
         <div class="field">
-          <label class="label">วัตถุประสงค์</label>
-          <div class="control">
-            <input type="text" class="input" placeholder="วัตถุประสงค์" v-model="org.objective">
-          </div>
+          <input-box :type="`text`" :label="`พื้นที่ปฏิบัติงาน`" v-model="org.area"></input-box>
+        </div>
+        <div class="field">
+          <input-box :type="`text`" :label="`วัตถุประสงค์`" v-model="org.objective"></input-box>
         </div>
         <div class="field">
           <label class="label">แหล่งเงินทุน</label>
           <div class="control">
-            <input type="text" class="input" placeholder="แหล่งเงินทุน" v-model="org.investment">
+            <input-box :type="`text`" :label="`แหล่งเงินทุน`" v-model="org.investment"></input-box>
           </div>
         </div>
       </div>
@@ -87,9 +61,13 @@
 
 <script>
 import { OrgData } from '@/mixins'
+import InputBox from '@/components/InputBox'
 
 export default {
   mixins: [OrgData],
+  components: {
+    InputBox
+  },
   methods: {
     save () {
       this.$emit('save', this.org)

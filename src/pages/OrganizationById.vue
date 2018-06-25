@@ -1,6 +1,8 @@
 <template>
   <div v-if="orgData">
-    ข้อมูลองค์กร
+    <span class="title">
+      ข้อมูลองค์กร
+    </span>
     <div class="columns">
       <div class="column is-2">
         {{ orgData.nameTH }}<br>
@@ -17,8 +19,11 @@
           <div class="column is-3 person-box" v-for="(person, i) in getPeopleByOrg" :key="i">
             <div>
               <router-link :to="`/people/id/${person._id}`" class="has-text-grey-darker">
-                <div class="avatar" :style="{ 'background-image': 'url(' + person.photo + ')' }">
-                  <!-- <avatar :photo="person.photo"></avatar> -->
+                <div class="avatar" :style="{ 'background-image': 'url(' + person.photo + ')' }" v-if="person.photo !== ''">
+                </div>
+                <div class="avatar" style="background: #f8f8f8;" v-else>
+                  <br>
+                  <p class="title">No photo</p>
                 </div>
               </router-link>
               <strong>{{ person.firstname + ' ' + person.lastname }}</strong>

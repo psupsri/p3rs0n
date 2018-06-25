@@ -9,7 +9,6 @@
       </div>
     </section>
     <foot></foot>
-    <nav class="navbar is-fixed-bottom is-info"></nav>
   </div>
 </template>
 
@@ -43,7 +42,6 @@ export default {
 <style scoped>
 .section {
   margin-top: 80px;
-  min-height: 100vh;
-  max-height: 100vh;
+  margin-bottom: 80px;
 }
 </style>

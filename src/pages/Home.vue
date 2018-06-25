@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg">
   </div>
 </template>
 

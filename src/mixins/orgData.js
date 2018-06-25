@@ -1,6 +1,8 @@
 export default {
   data: () => ({
     org: {
+      nameShTH: '',
+      nameShEN: '',
       nameTH: '',
       nameEN: '',
       coordinator: '',
@@ -8,10 +10,10 @@ export default {
       email: '',
       address: {
         address: '',
-        subDistrict: '',
-        district: '',
+        tambon: '',
+        amphoe: '',
         province: '',
-        zipcode: ''
+        postcode: ''
       },
       area: '',
       objective: '',

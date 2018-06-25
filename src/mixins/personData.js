@@ -1,8 +1,10 @@
 export default {
   data: () => ({
-    people: {
+    person: {
+      prefix: '',
       firstname: '',
       lastname: '',
+      photo: '',
       birthday: '',
       email: '',
       tel: '',
@@ -12,22 +14,23 @@ export default {
       religion: '',
       address: {
         address: '',
-        subDistrict: '',
-        district: '',
+        tambon: '',
+        amphoe: '',
         province: '',
-        zipcode: ''
+        postcode: ''
       },
-      schools: [
-        { school: '', level: '', faculty: '', year: '' }
+      education: [
+        { school: '', level: '', faculty: '' }
       ],
-      organizationsPrimary: { job: '', organization: '', position: '', salary: 0 },
-      organizations: [
+      occupation: [
         { job: '', organization: '', position: '', salary: 0 }
       ],
-      socials: [
+      social: [
         { account: '', host: '' }
       ],
-      photo: ''
+      closeRelation: [
+        { person: '', relation: '' }
+      ]
     }
   })
 }

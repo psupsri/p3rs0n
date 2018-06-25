@@ -1,17 +1,20 @@
 <template>
 <div>
   <p class="title">แก้ไขข้อมูลบุคคล</p>
-  <people-form @save="save" :data="people" @back="back"></people-form>
+  <people-form @save="save" :data="person" @back="back"></people-form>
 </div>
 </template>
 
 <script>
-import { PeopleData } from '@/mixins'
+import { PersonData } from '@/mixins'
 import { People } from '@/services'
 import peopleForm from '@/components/PeopleForm'
 
 export default {
-  mixins: [PeopleData],
+  mixins: [PersonData],
+  data: () => ({
+    id: null
+  }),
   components: {
     peopleForm
   },
@@ -30,7 +33,7 @@ export default {
     },
     getById () {
       People.getById(this.id, (data) => {
-        this.people = data
+        this.person = data
       })
     },
     save (value) {

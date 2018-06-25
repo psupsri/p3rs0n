@@ -6,26 +6,18 @@
   <div class="column">
     <search-input @search="getSearchResult"></search-input>
     <div class="person-with-table" v-if="show === 'table'">
-      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-        <thead>
+      <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+        <thead class="thead">
           <tr>
-            <td v-for="(h, hi) in [
-              'ลำดับ','ชื่อจริง','นามสกุล','อีเมล์','เบอร์โทร','เพศ','กลุ่มเลือด','ศาสนา','สถานภาพ'
-            ]" :key="hi">{{ h }}</td>
-            <td v-if="admin">จัดการ</td>
+            <th v-for="(h, hi) in [
+              'ชื่อจริง', 'นามสกุล', 'อีเมล์', 'เบอร์โทร', 'เพศ', 'กลุ่มเลือด', 'ศาสนา', 'สถานภาพ'
+            ]" :key="hi">{{ h }}</th>
+            <th v-if="admin">จัดการ</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="has-text-grey-darker" v-for="(person, i) in people" :key="i">
-            <td>{{ i + 1 }}</td>
-            <td>{{ person.firstname }}</td>
-            <td>{{ person.lastname }}</td>
-            <td>{{ person.email }}</td>
-            <td>{{ person.tel }}</td>
-            <td>{{ person.gender }}</td>
-            <td>{{ person.blood }}</td>
-            <td>{{ person.religion }}</td>
-            <td>{{ person.status }}</td>
+          <tr v-for="(person, i) in people" :key="i">
+            <td v-for="(ph, phi) in ['firstname', 'lastname', 'email', 'tel', 'gender', 'blood', 'religion', 'status']" :key="phi">{{ person[ph] }}</td>
             <td v-if="admin">
               <div class="field is-grouped">
                 <div class="control">
@@ -66,7 +58,7 @@
       </table>
     </div>
     <div class="columns is-multiline" v-if="show === 'photo'">
-      <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd has-text-centered person-box" v-for="(person, i) in people" :key="i">
+      <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-fifth-fullhd has-text-centered person-box" v-for="(person, i) in people" :key="i">
         <div>
           <div v-if="admin" class="option-button">
             <div class="field is-grouped">
@@ -83,8 +75,10 @@
             </div>
           </div>
           <router-link :to="`/people/id/${person._id}`" class="has-text-grey-darker">
-            <div class="avatar" :style="{ 'background-image': 'url(' + person.photo + ')' }">
-              <!-- <avatar :photo="person.photo"></avatar> -->
+            <div class="avatar" :style="{ 'background-image': 'url(' + person.photo + ')' }" v-if="person.photo !== ''"></div>
+            <div class="avatar" style="background: #f8f8f8;" v-else>
+              <br>
+              <p class="title">No photo</p>
             </div>
           </router-link>
           <strong>{{ fullname(i) }}</strong>
@@ -235,5 +229,8 @@ export default {
 }
 .person-box:hover .avatar {
   opacity: 0.7;
+}
+.thead {
+  background: #ffdd57;
 }
 </style>

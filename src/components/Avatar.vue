@@ -1,5 +1,6 @@
 <template>
-  <figure class="image" :style="{ 'background-image': 'url(' + photo + ')' }">
+  <figure class="image"
+    :style="{ 'background-image': 'url(' + photo + ')', 'height': height + 'px' }">
     <!-- <img :src="photo" class="avatar" v-if="photo">
     <img src="@/assets/files/photos/nophoto.png" class="avatar" v-else> -->
   </figure>
@@ -7,7 +8,15 @@
 
 <script>
 export default {
-  props: ['photo']
+  props: {
+    photo: {
+      type: String
+    },
+    height: {
+      type: Number,
+      default: 180
+    }
+  }
 }
 </script>
 
@@ -15,7 +24,6 @@ export default {
 .image {
   width: 100% !important;
   min-width: 100% !important;
-  height: 180px !important;
   max-height: 180px !important;
   background-position: center;
   background-repeat: no-repeat;

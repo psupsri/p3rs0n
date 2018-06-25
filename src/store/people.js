@@ -20,17 +20,21 @@ const actions = {
 const getters = {
   getPeople: state => state.people,
   getPeopleById: state => id => _.filter(state.people, { '_id': id }),
-  getPeopleSimilar (state) {
+  getPeopleOrgSimilar (state) {
     return (id) => {
-      let sp = _.forEach(state.people, (val) => {
-        val.similar = []
+      let i = _.filter(state.people, {'_id': id})
+      let p = state.people.filter((s) => {
+        return s.occupation[0].organization === i[0].occupation[0].organization && s._id !== i[0]._id && i[0].occupation[0].organization !== ''
       })
-      let i = _.filter(sp, {'_id': id})
-      let p = sp.filter((s) => {
-        s.similar.push('สังกัดองค์กรเดียวกัน')
-        return s.organizationsPrimary.organization === i[0].organizationsPrimary.organization && s._id !== i[0]._id && i[0].organizationsPrimary.organization !== ''
+      return p
+    }
+  },
+  getPeopleSchoolSimilar (state) {
+    return (id) => {
+      let i = _.filter(state.people, {'_id': id})
+      let p = state.people.filter((s) => {
+        return s.education[0].school === i[0].education[0].school && s._id !== i[0]._id && i[0].education[0].school !== ''
       })
-      // console.log(p)
       return p
     }
   },

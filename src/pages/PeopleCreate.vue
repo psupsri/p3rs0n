@@ -1,7 +1,7 @@
 <template>
 <div>
   <p class="title">เพิ่มข้อมูลบุคคล</p>
-  <people-form @save="save"></people-form>
+  <people-form @save="save" @back="back"></people-form>
 </div>
 </template>
 
