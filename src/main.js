@@ -26,8 +26,8 @@ firebase.initializeApp(config)
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyCds68MTJuCxVnWQjHKPCTpZfzbZqQnFM8',
-    libraries: 'places'
+    key: 'AIzaSyDQZs5Bu5DQgRvFp6RzMMiI8o4fnbxXL1c',
+    libraries: 'places, drawing, visualization'
   }
 })
 

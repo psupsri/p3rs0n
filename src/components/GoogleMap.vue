@@ -9,6 +9,7 @@
         <button @click="addMarker">Add</button>
       </label>
       <br/>
+
     </div>
     <br>
     <gmap-map
@@ -28,14 +29,16 @@
 
 <script>
 export default {
-  name: 'Map',
+  name: 'GoogleMap',
   data: () => ({
+    // default to Montreal to keep it simple
+    // change this to whatever makes sense
     center: { lat: 45.508, lng: -73.587 },
     markers: [],
     places: [],
     currentPlace: null
   }),
-  mounted () {
+  created () {
     this.geolocate()
   },
   methods: {

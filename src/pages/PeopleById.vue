@@ -59,9 +59,10 @@
               ผู้เกี่ยวข้อง
             </span>
           </div>
-          <div class="column is-12" v-for="(g, gi) in [getPeopleOrgSimilar, getPeopleSchoolSimilar]" :key="gi">
-            <div class="columns is-multiline">
-              <div class="column is-3" v-for="(p, s) in g" :key="gi + s">
+          <div class="column is-12" v-if="getPeopleOrgSimilar.length > 0">
+            <p class="subtitle">สังกัดองค์กรเดียวกัน</p>
+            <div class="columns">
+              <div class="column is-3" v-for="(p, s) in getPeopleOrgSimilar" :key="`po-` + s">
                 <div class="person-with-avatar">
                   <div class="avatar">
                     <router-link :to="`/people/id/${p._id}`" class="has-text-grey-darker">
@@ -73,6 +74,24 @@
                 </div>
               </div>
             </div>
+            <hr>
+          </div>
+          <div class="column is-12" v-if="getPeopleSchoolSimilar.length > 0">
+            <p class="subtitle">ศึกษาสถาบันเดียวกัน</p>
+            <div class="columns">
+              <div class="column is-3" v-for="(p, s) in getPeopleSchoolSimilar" :key="`ps-` + s">
+                <div class="person-with-avatar">
+                  <div class="avatar">
+                    <router-link :to="`/people/id/${p._id}`" class="has-text-grey-darker">
+                      <avatar :photo="p.photo" :height="140"></avatar>
+                      <strong>{{ p.firstname }} {{ p.lastname }}</strong><br>
+                      <small v-for="(ps, st) in p.similar" :key="st">{{ ps }}</small>
+                    </router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
           </div>
         </div>
       </div>

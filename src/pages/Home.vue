@@ -1,16 +1,18 @@
 <template>
   <div class="wrapper">
-    <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/master/pass/GoogleMapTA.jpg">
+    <!-- <google-map :name="`name`"></google-map> -->
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import Icon from '@/components/Icon'
+import GoogleMap from '@/components/GoogleMap'
 
 export default {
   components: {
-    Icon
+    Icon,
+    GoogleMap
   },
   created () {
     this.setusers()
@@ -31,3 +33,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.google-map {
+  width: 800px !important;
+  height: 600px !important;
+  margin: 0 auto;
+  background: gray;
+}
+</style>
